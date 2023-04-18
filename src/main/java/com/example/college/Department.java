@@ -28,9 +28,10 @@ public class Department {
     @Embedded
     private Address address;
 
-    public Department(String name, Address address) {
+    public Department(String name, Address address, College college) {
         this.name = name;
         this.address = address;
+        this.college = college;
     }
     @ManyToOne
     @JoinColumn(

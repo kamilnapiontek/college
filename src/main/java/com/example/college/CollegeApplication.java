@@ -17,12 +17,11 @@ public class CollegeApplication {
 	CommandLineRunner commandLineRunner(CollegeRepository collegeRepository, CollegeService collegeService) {
 		return args -> {
 			College college = new College("Politechnika Częstochowska",generateFakeAddress(),500);
-
 			collegeRepository.save(college);
 
-			collegeService.addDepartment(college,new Department("Informatyki",generateFakeAddress()));
-			collegeService.addDepartment(college,new Department("Matematyki",generateFakeAddress()));
-			collegeService.addDepartment(college,new Department("Mechaniki",generateFakeAddress()));
+			collegeService.addDepartment(college,"Informatyki",generateFakeAddress());
+			collegeService.addDepartment(college,"Matematyki",generateFakeAddress());
+			collegeService.addDepartment(college,"Mechaniki",generateFakeAddress());
 
 		};
 	}

@@ -46,8 +46,8 @@ public class College {
 @OneToMany(
         mappedBy = "college",
         orphanRemoval = true,
-        cascade = {CascadeType.PERSIST, CascadeType.PERSIST},
-        fetch = FetchType.LAZY
+        cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+        fetch = FetchType.EAGER
 )
     private List<Department> departments = new ArrayList<>();
 }

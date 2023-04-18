@@ -9,9 +9,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CollegeService {
     private final CollegeRepository collegeRepository;
-    public void addDepartment(College college, Department department) {
+    public void addDepartment(College college, String departmentName, Address departmentAddress) {
         Optional<College> collegeOptional = collegeRepository.findById(college.getId());
         collegeOptional.ifPresentOrElse(c -> {
+            Department department = new Department(departmentName,departmentAddress,college);
             c.getDepartments().add(department);
             collegeRepository.save(college);
         }, () -> System.err.println("Ni ma takiego w bazie"));
