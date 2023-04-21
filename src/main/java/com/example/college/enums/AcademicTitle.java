@@ -1,2 +1,6 @@
-package com.example.college.enums;public enum AcademicTitle {
+package com.example.college.enums;
+
+public enum AcademicTitle {
+    DOCTOR,
+    PROFESSOR
 }

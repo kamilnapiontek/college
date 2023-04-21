@@ -1,5 +1,7 @@
 package com.example.college;
 
+import com.example.college.address.Address;
+import com.example.college.department.Department;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

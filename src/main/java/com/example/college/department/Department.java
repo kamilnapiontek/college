@@ -1,9 +1,14 @@
-package com.example.college;
+package com.example.college.department;
 
+import com.example.college.College;
+import com.example.college.address.Address;
+import com.example.college.major.Major;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "departments")
@@ -28,11 +33,11 @@ public class Department {
     @Embedded
     private Address address;
 
-    public Department(String name, Address address, College college) {
+    public Department(String name, Address address) {
         this.name = name;
         this.address = address;
-        this.college = college;
     }
+
     @ManyToOne
     @JoinColumn(
             name = "college_id",
@@ -43,4 +48,12 @@ public class Department {
             )
     )
     private College college;
+
+    @OneToMany(
+            mappedBy = "department",
+            orphanRemoval = true,
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            fetch = FetchType.EAGER
+    )
+    private List<Major> majorList;
 }

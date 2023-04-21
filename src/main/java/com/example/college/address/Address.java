@@ -1,4 +1,4 @@
-package com.example.college;
+package com.example.college.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
