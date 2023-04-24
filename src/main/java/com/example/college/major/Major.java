@@ -5,12 +5,14 @@ import com.example.college.subject.Subject;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Getter
 @NoArgsConstructor
+@ToString
 public class Major {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,16 +22,6 @@ public class Major {
     public Major(String name, Department department) {
         this.name = name;
         this.department = department;
-    }
-
-    @Override
-    public String toString() {
-        return "Major{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", department=" + department +
-                ", subjectList=" + subjectList +
-                '}';
     }
 
     @ManyToOne

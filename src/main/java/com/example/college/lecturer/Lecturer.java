@@ -1,7 +1,6 @@
 package com.example.college.lecturer;
 
 import com.example.college.address.Address;
-import com.example.college.department.Department;
 import com.example.college.enums.AcademicTitle;
 import com.example.college.subject.Subject;
 import jakarta.persistence.*;
@@ -32,7 +31,7 @@ public class Lecturer {
     private BigDecimal salary;
     private LocalDate hireDate;
     private boolean activeEmployee;
-@Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private AcademicTitle academicTitle;
 
     public Lecturer(String firstName, String lastName, Address address, BigDecimal salary, LocalDate hireDate, boolean activeEmployee, AcademicTitle academicTitle) {
