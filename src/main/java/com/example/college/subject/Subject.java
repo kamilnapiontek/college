@@ -36,6 +36,8 @@ public class Subject {
             )
     )
     private Major major;
-    @ManyToMany(mappedBy = "currentlyTeachingSubjects")
+    @ManyToMany(
+            mappedBy = "currentlyTeachingSubjects",
+            fetch = FetchType.EAGER)
     private List<Lecturer> currentlyTeachingLecturers;
 }
